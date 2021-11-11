@@ -17,7 +17,8 @@ struct HipHeader {
     description: String,
     author: String,
     status: HIPState,
-    created: String,
+    #[serde(rename = "created")]
+    creation_date: String,
 }
 
 #[derive(Debug, Deserialize, Serialize)]
@@ -91,7 +92,7 @@ fn validate_fm(fm_str: &str) -> Result<()> {
     let yaml: HipHeader = serde_yaml::from_str(&fm_str)?;
 
     // Check data format
-    let res_date = iso_8601::Date::from_str(yaml.created.as_str());
+    let res_date = iso_8601::Date::from_str(yaml.creation_date.as_str());
     if res_date.is_err() {
         return Err(ValidatorError::InvalidDateFormat.into());
     }
