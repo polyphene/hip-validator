@@ -31,7 +31,7 @@ enum HIPState {
     Withdrawn,
 }
 
-fn main() {
+fn main() -> Result<()> {
     // Create CLI matches
     let matches = App::new("HIP Validator")
         .bin_name("hip-validator")
@@ -49,8 +49,7 @@ fn main() {
     // Get file data
     let res_file_data = get_file_data(&matches);
     if res_file_data.is_err() {
-        eprintln!("error: {:?}", res_file_data.err().unwrap());
-        std::process::exit(1);
+        anyhow::bail!("error: {:?}", res_file_data.err().unwrap());
     }
     let file_data = res_file_data.unwrap();
 
@@ -61,13 +60,11 @@ fn main() {
 
             let res_validator = validate_fm(fm_str);
             if res_validator.is_err() {
-                eprintln!("error: {:?}", res_validator.err().unwrap());
-                std::process::exit(1);
+                anyhow::bail!("error: {:?}", res_validator.err().unwrap());
             }
         }
         None => {
-            eprintln!("error: markdown file should contain a YAML front matter block");
-            std::process::exit(1);
+            anyhow::bail!("error: markdown file should contain a YAML front matter block");
         }
     }
 
