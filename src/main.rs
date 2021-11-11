@@ -11,7 +11,8 @@ use utils::{find_yaml_block, ValidatorError};
 #[derive(Debug, Deserialize, Serialize)]
 /// [`HipHeader`] is the structure that our Yaml front matter block should have.
 struct HipHeader {
-    hip: String,
+    #[serde(rename = "hip")]
+    id: u64,
     title: String,
     description: String,
     author: String,
