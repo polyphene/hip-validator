@@ -9,8 +9,8 @@ mod utils;
 use utils::{find_yaml_block, ValidatorError};
 
 #[derive(Debug, Deserialize, Serialize)]
-/// [`Yaml`] is the structure that our Yaml front matter block should have.
-struct Yaml {
+/// [`HipHeader`] is the structure that our Yaml front matter block should have.
+struct HipHeader {
     hip: String,
     title: String,
     description: String,
@@ -87,7 +87,7 @@ fn get_file_data(matches: &ArgMatches) -> Result<String> {
 /// [`validate_fm`] will verify that the font matter block corresponds to our specifications
 fn validate_fm(fm_str: &str) -> Result<()> {
     // Deserializing will check for us that all fields are filled
-    let yaml: Yaml = serde_yaml::from_str(&fm_str)?;
+    let yaml: HipHeader = serde_yaml::from_str(&fm_str)?;
 
     // Check data format
     let res_date = iso_8601::Date::from_str(yaml.created.as_str());
