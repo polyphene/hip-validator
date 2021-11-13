@@ -3,6 +3,13 @@ name = "hip_validator"
 version = "1.0.0"
 authors = ["Polyphene <contact@polyphene.io>"]
 edition = "2018"
+license = "MIT"
+description = "Utility tool to validate the format of a Holium Imporvement Proposal (HIP)."
+documentation = "https://docs.holium.org"
+readme = "README.md"
+homepage = "https://holium.org"
+repository = "https://github.com/polyphene/hip-validator"
+keywords = ["holium"]
 
 [dev-dependencies]
 assert_cmd = "^1.0.7"
