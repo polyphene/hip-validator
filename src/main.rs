@@ -1,3 +1,7 @@
+//! Utility tool to validate the format of a Holium Imporvement Proposal (HIP).
+//!
+//! Check out the [official documentation](https://docs.holium.org/) for more information.
+
 use anyhow::Result;
 use clap::{crate_authors, crate_version, App, AppSettings, Arg, ArgMatches};
 use serde::{Deserialize, Serialize};
