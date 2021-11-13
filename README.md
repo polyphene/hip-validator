@@ -18,7 +18,7 @@
 ### 📦 Install
 
 ```sh
-cargo install hip-validator
+cargo install hip_validator
 ```
 ### 📝 [Usage](https://docs.holium.org)
 
