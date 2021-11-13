@@ -1,0 +1,32 @@
+[package]
+name = "hip_validator"
+version = "1.0.0"
+authors = ["Polyphene <contact@polyphene.io>"]
+edition = "2018"
+license = "MIT"
+description = """Utility tool to validate the format of a Holium Imporvement Proposal (HIP).
+For more information, check out the official documentation at https://docs.holium.org ."""
+documentation = "https://docs.holium.org"
+readme = "README.md"
+homepage = "https://holium.org"
+repository = "https://github.com/polyphene/hip-validator"
+keywords = ["holium"]
+
+[dev-dependencies]
+assert_cmd = "^1.0.7"
+assert_fs = "^1.0.3"
+predicates = "^2.0.0"
+project-root = "^0.2.2"
+walkdir = "^2.3.2"
+
+[dependencies]
+anyhow = "^1.0.44"
+clap = "^3.0.0-beta.5"
+iso-8601 = "^0.4.1"
+serde = {version = "^1.0.130", features = ["derive"] }
+serde_yaml = "^0.8.21"
+thiserror = "^1.0.30"
+
+[[bin]]
+name = "hip-validator"
+path = "src/main.rs"
