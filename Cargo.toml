@@ -4,7 +4,8 @@ version = "1.0.0"
 authors = ["Polyphene <contact@polyphene.io>"]
 edition = "2018"
 license = "MIT"
-description = "Utility tool to validate the format of a Holium Imporvement Proposal (HIP)."
+description = """Utility tool to validate the format of a Holium Imporvement Proposal (HIP).
+For more information, check out the official documentation at https://docs.holium.org ."""
 documentation = "https://docs.holium.org"
 readme = "README.md"
 homepage = "https://holium.org"
